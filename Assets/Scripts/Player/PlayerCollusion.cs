@@ -16,7 +16,7 @@ public class PlayerCollusion : MonoBehaviour
         ScoreUpdate();
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col) //lose screen
     {
         if (col.CompareTag("Obstacle"))
         {
@@ -25,7 +25,7 @@ public class PlayerCollusion : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other) //point
     {
         if (other.CompareTag("Point"))
         {
@@ -36,7 +36,7 @@ public class PlayerCollusion : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.CompareTag("Ground"))
+        if (col.collider.CompareTag("Ground")) //lose screen
         {
             Debug.Log("Died.");
             Time.timeScale = 0;
